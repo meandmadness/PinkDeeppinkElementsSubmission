@@ -16,6 +16,8 @@ export type Listing = {
   ownerAvatar: string;
   requestedCount: number;
   createdDate: string;
+  meetingArea?: string;
+  trustCircles?: string[];
   favorited?: boolean;
 };
 

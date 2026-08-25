@@ -137,3 +137,81 @@ button { cursor: pointer; }
 .rex-skeleton { background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--card)) 50%, hsl(var(--muted)) 75%); background-size: 200% 100%; animation: rex-shimmer 1.5s infinite; }
 @keyframes rex-shimmer { to { background-position: -200% 0; } }
 .rex-line { height: 1px; background: hsl(var(--border)); }
+
+/* RExchange theme tokens. The application only changes this attribute; all
+   shared components keep the same structure across modes. */
+[data-theme="halloween-dark"] {
+  --background: 0 0% 3%;
+  --foreground: 38 100% 95%;
+  --card: 0 0% 8%;
+  --card-foreground: 38 100% 95%;
+  --card-border: 20 38% 16%;
+  --popover: 0 0% 8%;
+  --popover-foreground: 38 100% 95%;
+  --border: 20 38% 16%;
+  --input: 20 30% 23%;
+  --ring: 25 100% 50%;
+  --primary: 25 100% 50%;
+  --primary-foreground: 0 0% 3%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 38 100% 95%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 29 14% 63%;
+  --accent: 39 100% 55%;
+  --accent-foreground: 0 0% 3%;
+  --destructive: 0 79% 55%;
+  --destructive-foreground: 38 100% 95%;
+  --shadow-soft: 0 18px 50px rgba(41,21,47,.28);
+}
+[data-theme="classic-dark"] {
+  --background: 0 0% 3%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 9%;
+  --card-foreground: 0 0% 100%;
+  --card-border: 0 30% 16%;
+  --popover: 0 0% 9%;
+  --popover-foreground: 0 0% 100%;
+  --border: 0 30% 16%;
+  --input: 0 22% 24%;
+  --ring: 2 100% 50%;
+  --primary: 2 100% 44%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 13%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 13%;
+  --muted-foreground: 0 0% 57%;
+  --accent: 0 100% 58%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 100% 65%;
+  --destructive-foreground: 0 0% 100%;
+}
+[data-theme="garden-light"] {
+  --background: 48 29% 93%;
+  --foreground: 143 19% 14%;
+  --card: 48 100% 99%;
+  --card-foreground: 143 19% 14%;
+  --card-border: 55 16% 82%;
+  --popover: 48 100% 99%;
+  --popover-foreground: 143 19% 14%;
+  --border: 55 16% 82%;
+  --input: 55 12% 75%;
+  --ring: 144 38% 27%;
+  --primary: 144 38% 27%;
+  --primary-foreground: 48 29% 97%;
+  --secondary: 100 18% 78%;
+  --secondary-foreground: 143 19% 14%;
+  --muted: 100 17% 87%;
+  --muted-foreground: 145 10% 37%;
+  --accent: 14 44% 51%;
+  --accent-foreground: 48 29% 97%;
+  --destructive: 4 64% 48%;
+  --destructive-foreground: 48 29% 97%;
+  --shadow-soft: 0 18px 50px rgba(35,78,58,.10);
+}
+[data-theme="halloween-dark"] .rex-card { border-color: #3a241a; }
+[data-theme="halloween-dark"] .theme-art { background: radial-gradient(circle at 70% 22%, #ff8a1f 0 2%, transparent 3%), linear-gradient(145deg,#29152f,#070707 68%); }
+[data-theme="classic-dark"] .theme-art { background: linear-gradient(145deg,#4a0000,#080808 72%); }
+[data-theme="garden-light"] .theme-art { background: radial-gradient(circle at 80% 15%,#e4b84a 0 8%,transparent 9%), linear-gradient(145deg,#dbe5d1,#f4f1e8 70%); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

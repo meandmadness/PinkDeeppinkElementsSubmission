@@ -1,0 +1,621 @@
+==================================================
+IMPORTANT UPDATE
+==================================================
+
+The previous RExchange specification is absolute.
+
+Do not remove, overwrite, weaken, or break any requirement from the previous prompt.
+
+Keep all existing functionality, including:
+
+- Authentication.
+- SRMIST email validation.
+- Registration number validation.
+- Dark mode.
+- Red-and-black branding.
+- Space Grotesk typography.
+- Indian rupee pricing.
+- Browse.
+- Search.
+- Filters.
+- Listing creation.
+- Listing details.
+- Favorites.
+- Requests.
+- Messages.
+- Notifications.
+- Profile.
+- Gemini AI assistant.
+- Analytics graph.
+- LocalStorage persistence.
+- Safety features.
+- Admin demo.
+- Responsive design.
+- Accessibility.
+- Anime-inspired illustrations.
+
+This prompt adds new themes and unique features on top of the existing app.
+
+==================================================
+1. THEME SWITCHER
+==================================================
+
+Add a polished Theme Switcher inside Settings and also make it accessible from the main navigation or Profile menu.
+
+The app must support exactly these three visual modes:
+
+1. Halloween Dark Mode.
+2. Classic Dark Mode.
+3. Garden Light Mode.
+
+The default theme should be:
+
+Halloween Dark Mode.
+
+The user must be able to switch themes instantly without reloading the page.
+
+Store the selected theme in:
+
+`rexchange_settings`
+
+Use a setting such as:
+
+```ts
+type ThemeMode =
+  | "halloween-dark"
+  | "classic-dark"
+  | "garden-light";
+Persist the selected theme between sessions.
+Apply the theme using:
+A data-theme attribute on the root element.
+CSS variables.
+Or a clean theme provider.
+Do not duplicate the entire application for each theme.
+Use shared components and theme variables.
+Every existing screen must work in every theme.
+==================================================
+2. HALLOWEEN DARK MODE
+Create a stylish Halloween-inspired dark theme.
+This must be a mature, premium Halloween style for college students, not a childish party theme.
+Colours:
+Background:
+#070707
+Card:
+#151515
+Elevated card:
+#1E1E1E
+Primary orange:
+#FF6A00
+Bright orange:
+#FF8A1F
+Deep orange:
+#A83B00
+Dark red:
+#7A0019
+Blood-red accent:
+#C1121F
+Purple shadow:
+#29152F
+Main text:
+#FFF7E6
+Secondary text:
+#D8CFC5
+Muted text:
+#9A8F86
+Border:
+#3A241A
+Success:
+#65C466
+Warning:
+#FFB000
+Error:
+#FF4D4D
+Halloween visual details:
+Subtle moon shapes.
+Small stars.
+Tiny bats.
+Pumpkins.
+Friendly ghosts.
+Spiderweb corner details.
+Dark campus silhouettes.
+Small floating particles.
+Orange-red glows used sparingly.
+Maroon shadows.
+Black cards with orange borders.
+Do not use:
+Horror imagery.
+Blood splatter.
+Gore.
+Scary faces.
+Violent imagery.
+Excessive skulls.
+Flashing effects.
+Too many pumpkins.
+Childish cartoon clutter.
+Halloween hero concept:
+Show two original anime-inspired college students exchanging a book under a moonlit campus sky.
+Add subtle details:
+A crescent moon.
+A small bat silhouette.
+A pumpkin-shaped exchange icon.
+Warm orange light from a library window.
+Red-orange exchange arrows.
+Use original artwork only.
+Do not use copyrighted characters.
+Halloween labels and microcopy may include:
+“Spooky-good exchanges.”
+“Find something useful before midnight.”
+“Campus exchanges with a little mystery.”
+“No tricks, just useful listings.”
+Keep important actions clear and professional.
+==================================================
+3. CLASSIC DARK MODE
+Create a clean, professional red-and-black theme based on the previous prompt.
+Colours:
+Background:
+#080808
+Secondary background:
+#101010
+Card:
+#161616
+Elevated card:
+#1D1D1D
+Primary red:
+#E10600
+Bright red:
+#FF2A2A
+Dark red:
+#8B0000
+Deep maroon:
+#4A0000
+Main text:
+#FFFFFF
+Secondary text:
+#D1D1D1
+Muted text:
+#929292
+Border:
+#302020
+This should be the most professional theme.
+Use:
+Red primary buttons.
+Red active navigation.
+Black and dark-gray cards.
+Thin red borders.
+Subtle red gradients.
+Minimal decorative elements.
+Original anime-inspired campus illustrations with red accents.
+Microcopy:
+“Exchange more. Spend less.”
+“Useful things. Better connections.”
+“Find it on campus.”
+==================================================
+4. GARDEN LIGHT MODE
+Create a peaceful garden-inspired light theme.
+This is the only light theme.
+The garden theme must remain modern and premium, not pastel or childish.
+Colours:
+Background:
+#F4F1E8
+Card:
+#FFFDF7
+Elevated card:
+#FFFFFF
+Deep green:
+#234E3A
+Leaf green:
+#4F7D4A
+Sage:
+#91A889
+Muted terracotta:
+#B85C4A
+Warm brown:
+#6B4423
+Soft yellow:
+#E4B84A
+Main text:
+#1D2A22
+Secondary text:
+#506057
+Muted text:
+#78847C
+Border:
+#D8D7C9
+Garden visual details:
+Small leaves.
+Botanical line art.
+Tiny flowers.
+Campus garden paths.
+Books beside plants.
+Soft sunlight shapes.
+Garden benches.
+Subtle paper textures.
+Small butterflies used sparingly.
+Do not use:
+Neon green.
+Excessive pastel colours.
+Rainbow gradients.
+Overly childish flowers.
+Cluttered botanical backgrounds.
+Garden hero concept:
+Show two original anime-inspired college students exchanging notes near a campus garden.
+Add:
+A leafy tree.
+A bench.
+A notebook.
+Small botanical shapes.
+A warm sunlight effect.
+Garden labels and microcopy may include:
+“Grow your campus connections.”
+“Share knowledge. Grow together.”
+“Find useful things close to you.”
+Ensure all text has readable contrast.
+==================================================
+5. THEME SWITCHER UI
+Create an attractive theme selection screen or panel.
+Show three theme cards:
+Halloween Dark.
+Description:
+“A mysterious campus night for spooky-good exchanges.”
+Classic Dark.
+Description:
+“A bold red-and-black marketplace experience.”
+Garden Light.
+Description:
+“A calm campus garden for sharing and discovery.”
+Each card must include:
+Theme preview.
+Theme name.
+Description.
+Active checkmark.
+Select button.
+Accessible label.
+When the user switches theme:
+Apply it immediately.
+Save it to localStorage.
+Show a toast:
+“Theme changed to Halloween Dark.”
+or the appropriate theme name.
+Track the event as theme_changed.
+Do not reload the page.
+Use a short, subtle transition.
+Respect Reduce Motion settings.
+==================================================
+6. UNIQUE FEATURE: CAMPUS QUESTS
+Add a unique gamified feature called:
+“Campus Quests”
+Campus Quests are optional weekly goals that encourage useful activity without becoming a game-heavy experience.
+Examples:
+Browse 5 listings.
+Save 3 useful listings.
+Send your first request.
+Create your first listing.
+Offer a skill.
+Complete an exchange.
+Send a helpful message.
+Use Gemini to improve a listing.
+Explore listings from 3 categories.
+Each quest must contain:
+type CampusQuest = {
+  id: string;
+  title: string;
+  description: string;
+  target: number;
+  progress: number;
+  reward: number;
+  completed: boolean;
+  expiresAt: string;
+};
+Show:
+Progress bar.
+Current progress.
+Reward points.
+Completion state.
+Expiration date.
+Friendly illustration.
+Do not use gambling mechanics.
+Do not use paid rewards.
+Do not create addiction-oriented mechanics.
+Do not pressure users.
+Use reward points called:
+“Campus Credits”
+Campus Credits are demo-only points and have no monetary value.
+Store quests and credits in localStorage.
+==================================================
+7. UNIQUE FEATURE: TRUST CIRCLES
+Add a unique feature called:
+“Trust Circles”
+A Trust Circle is a private demo grouping for students who share:
+College.
+Department.
+Campus.
+Course.
+Club.
+Hostel.
+Users can filter listings by Trust Circle.
+Trust Circle examples:
+SRMIST CSE.
+SRMIST First Year.
+SRMIST Main Campus.
+Computer Science Study Group.
+Design Club.
+Hostel Community.
+Requirements:
+Add Trust Circle tags to listings.
+Let users select optional Trust Circles when creating listings.
+Let users filter Browse results by Trust Circle.
+Display a Trust Circle badge on matching listings.
+Do not claim official membership verification.
+Label this feature:
+“Demo community grouping.”
+==================================================
+8. UNIQUE FEATURE: EXCHANGE MATCH SCORE
+Add a small feature called:
+“Exchange Match”
+When a user opens a listing, show a demo match score based on:
+Matching category.
+Matching subject.
+Matching campus.
+Matching saved interests.
+Previous interactions.
+Listing type.
+Example:
+“87% Exchange Match”
+Show an explanation:
+“Based on your saved interests, Computer Science activity, and campus preferences.”
+Rules:
+Clearly label it as an estimate.
+Do not claim it is scientifically accurate.
+Do not make sensitive inferences.
+Do not use private or sensitive data.
+Do not make decisions about users.
+Allow users to hide the match score in Settings.
+Use a simple transparent scoring function.
+Show the factors contributing to the score.
+==================================================
+9. UNIQUE FEATURE: CAMPUS EXCHANGE MAP
+Add a demo-only “Campus Exchange Map” view.
+The map should be a stylized campus layout, not a real geographic map.
+Show safe public exchange spots:
+Main Library.
+College Canteen.
+Student Activity Centre.
+Department Block.
+College Ground.
+Campus Garden.
+Reception Area.
+Use original SVG/CSS map illustrations.
+Features:
+Select a meeting spot.
+Show listings near that spot.
+Show safety indicator.
+Display:
+“Public campus location.”
+Do not show exact private addresses.
+Do not track real-time user locations.
+Do not request GPS permissions.
+Do not expose private locations.
+Use the map as a safe planning tool for exchanges.
+==================================================
+10. UNIQUE FEATURE: LISTING PASSPORT
+Add a “Listing Passport” panel to each listing.
+A Listing Passport is a structured summary that helps users understand the listing.
+Show:
+Listing type.
+Category.
+Condition where applicable.
+Exchange mode.
+Price.
+Campus.
+Meeting area.
+Posted date.
+Number of requests.
+Safety reminder.
+Owner response status in demo mode.
+Use labels:
+“Information provided by owner.”
+“Demo data.”
+“Not independently verified.”
+Do not claim that the listing has been authenticated.
+==================================================
+11. UNIQUE FEATURE: CAMPUS DROPBOX
+Add a feature called:
+“Campus Dropbox”
+Users can create a temporary giveaway listing.
+Fields:
+Item title.
+Description.
+Pickup location.
+Pickup deadline.
+Quantity.
+Status.
+Show a special badge:
+“Free Drop”
+Rules:
+Only public campus locations may be selected.
+Do not allow private home addresses.
+Add a safety notice.
+Automatically mark the listing expired after the deadline in demo logic.
+Show expired listings in history, not Browse.
+==================================================
+12. UNIQUE FEATURE: STUDY STREAK
+Add an optional “Study Streak” widget.
+It tracks useful app activity, not study time.
+Examples of streak activity:
+Viewing a study listing.
+Saving notes.
+Requesting tutoring.
+Offering a skill.
+Sending a helpful message.
+Show:
+Current streak.
+Best streak.
+Weekly activity.
+Pause streak option.
+Make it optional.
+Allow users to hide it.
+Do not shame users for missing a day.
+Do not use manipulative notifications.
+==================================================
+13. ANALYTICS UPDATES
+Extend the existing interaction analytics to include:
+Theme changed.
+Campus Quest opened.
+Campus Quest completed.
+Trust Circle selected.
+Exchange Match viewed.
+Campus Exchange Map opened.
+Meeting spot selected.
+Listing Passport viewed.
+Campus Dropbox created.
+Study Streak viewed.
+Study Streak paused.
+Show these in the analytics dashboard where useful.
+Use the existing red chart style in Classic Dark Mode.
+Use orange chart styling in Halloween Dark Mode.
+Use green/terracotta chart styling in Garden Light Mode.
+Charts must remain responsive on mobile. Use a responsive chart container with an explicit height and test it at small widths. [web:147][web:149]
+==================================================
+14. THEME-AWARE ILLUSTRATIONS
+Make illustrations adapt to the active theme.
+Halloween Dark:
+Moonlit campus.
+Orange and red accents.
+Bats, pumpkins, stars.
+Dark silhouettes.
+Classic Dark:
+Red-and-black campus.
+Clean geometric shapes.
+Minimal decorations.
+Garden Light:
+Plants, trees, leaves.
+Warm sunlight.
+Botanical campus elements.
+Soft green and terracotta details.
+Use original illustrations only.
+Do not copy any anime character, manga panel, game character, logo, or copyrighted artwork.
+==================================================
+15. THEME-AWARE EMPTY STATES
+Create different empty-state visuals for each theme.
+Halloween Dark:
+“No listings yet? The campus is quiet tonight.”
+Classic Dark:
+“No listings found. Try changing your search or filters.”
+Garden Light:
+“Nothing here yet. Explore another corner of campus.”
+Keep the message clear and do not hide functionality behind decorative text.
+==================================================
+16. ACCESSIBILITY FOR THEMES
+All themes must meet readable contrast requirements.
+Requirements:
+Do not rely on colour alone.
+Include labels and icons for statuses.
+Add keyboard focus states.
+Add ARIA labels.
+Use readable font sizes.
+Add alt text to meaningful illustrations.
+Use empty alt text for decorative illustrations.
+Support keyboard navigation.
+Support reduced motion.
+Make chart summaries available to screen readers.
+Ensure buttons remain visible in every theme.
+Test inputs and error messages in all themes.
+Test dialogs in all themes.
+==================================================
+17. SETTINGS UPDATES
+Add these Settings options:
+Theme selector.
+Classic Dark Mode.
+Halloween Dark Mode.
+Garden Light Mode.
+High Contrast mode.
+Reduce Motion mode.
+Analytics tracking toggle.
+Show/hide Exchange Match.
+Show/hide Study Streak.
+Reset Demo Data.
+Clear Interaction History.
+Logout.
+Store all settings in:
+rexchange_settings
+==================================================
+18. DATA STORAGE UPDATES
+Add these localStorage keys:
+rexchange_theme
+rexchange_quests
+rexchange_campus_credits
+rexchange_trust_circles
+rexchange_study_streak
+rexchange_exchange_preferences
+rexchange_interactions
+Do not store passwords or API keys in localStorage.
+==================================================
+19. FINAL VISUAL GOAL
+The final app should feel like a unique student community platform, not a generic marketplace.
+It should combine:
+Marketplace listings.
+Student skill exchange.
+Campus community.
+Safe public meeting locations.
+Optional quests.
+Transparent match suggestions.
+Campus themes.
+Original anime-inspired illustrations.
+Dark Halloween atmosphere.
+Professional classic dark mode.
+Peaceful garden light mode.
+Useful analytics.
+Strong accessibility.
+The overall product should feel:
+“Like a campus social marketplace with personality, seasonal atmosphere, safe exchanges, and meaningful student-to-student connections.”
+==================================================
+20. FINAL TESTING
+After implementing these changes, test:
+Halloween Dark Mode.
+Classic Dark Mode.
+Garden Light Mode.
+Theme persistence after refresh.
+Theme switcher on mobile.
+Theme switcher on desktop.
+Readable text in every theme.
+Visible buttons in every theme.
+Hero illustrations in every theme.
+Empty states in every theme.
+Campus Quests.
+Campus Credits.
+Trust Circles.
+Exchange Match.
+Campus Exchange Map.
+Safe meeting spot selection.
+Listing Passport.
+Campus Dropbox.
+Study Streak.
+Theme-aware analytics charts.
+New analytics events.
+High Contrast mode.
+Reduce Motion mode.
+Analytics opt-out.
+Reset Demo Data.
+No API key exposure.
+No sensitive tracking.
+No copyrighted characters.
+No console errors.
+No TypeScript errors.
+No broken routes.
+No horizontal scrolling.
+No inaccessible dialogs.
+No broken mobile layout.
+Before modifying files, explain the implementation plan briefly.
+Then implement the changes.
+After implementing, run the app, inspect the preview, test the features, and fix all errors.
+Create a Replit Checkpoint after the application works successfully.
+
+If Replit struggles with the entire upgrade at once, send the additions in this order:
+
+1. **Theme system:** Halloween Dark, Classic Dark, and Garden Light.
+2. **Campus Quests and Trust Circles.**
+3. **Exchange Match and Campus Exchange Map.**
+4. **Listing Passport, Campus Dropbox, and Study Streak.**
+5. **Analytics, responsive testing, and accessibility polish.**
+
+Keep Gemini credentials in Replit Secrets rather than source code; Replit provides encrypted secrets as environment variables. [3] Space Grotesk is available through Google Fonts. [4]

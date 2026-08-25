@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "RExchange"
+description = "A premium student marketplace for SRMIST students to exchange, sell, give away, and request items and skills with trusted campus peers."
+version = "1.0.0"
+id = "artifacts/rexchange"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24595
+
+[services.development]
+run = "pnpm --filter @workspace/rexchange run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/rexchange", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/rexchange/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24595"
+BASE_PATH = "/"

@@ -1,0 +1,391 @@
+Build a complete, polished, responsive web application called “RExchange”.
+
+RExchange is a college marketplace for students in India. Students can list, discover, exchange, sell, give away, or request physical items and skills/services from other students.
+
+I am a beginner and do not know how to code. Do not only provide a plan, pseudocode, or an explanation. Build the complete working application, create the files, install the required packages, run the app, fix errors, and show me the working preview.
+
+Use a clean, maintainable architecture and explain the important parts in a beginner-friendly README.
+
+================================================== TECHNOLOGY
+Use:
+
+React.
+TypeScript.
+Vite.
+Tailwind CSS or a clean CSS system.
+React Router for navigation.
+Lucide React or another open-source icon library.
+Recharts or Chart.js for the analytics graph.
+LocalStorage for demo persistence.
+Server-side API route for Gemini AI.
+Space Grotesk as the only application font.
+Do not use copyrighted images, copyrighted anime characters, or recognizable characters from existing franchises.
+
+Use original SVG/CSS illustrations or properly licensed assets.
+
+Create a working development setup with:
+
+package.json.
+TypeScript configuration.
+Vite configuration.
+Tailwind/CSS configuration if needed.
+Environment variable example file.
+README.md.
+Clean folder structure.
+No console errors.
+================================================== APP NAME AND BRAND
+App name:
+
+RExchange
+
+Tagline:
+
+“Exchange more. Spend less. Learn together.”
+
+The app should feel:
+
+Premium.
+Modern.
+Bold.
+Trustworthy.
+Academic.
+Student-focused.
+Community-oriented.
+Slightly cinematic.
+Easy to use.
+================================================== DARK RED AND BLACK DESIGN
+The entire app must use dark mode by default.
+
+Use a premium red-and-black visual identity.
+
+Primary colours:
+
+Pure black: #000000
+
+Main background: #080808
+
+Secondary background: #101010
+
+Card background: #161616
+
+Elevated card: #1D1D1D
+
+Soft black: #242424
+
+Primary red: #E10600
+
+Bright red: #FF2A2A
+
+Dark red: #8B0000
+
+Deep maroon: #4A0000
+
+Muted red: #B32626
+
+Main text: #FFFFFF
+
+Secondary text: #D1D1D1
+
+Muted text: #929292
+
+Border: #302020
+
+Red border: #661414
+
+Success: #35C46A
+
+Warning: #E0A72F
+
+Error: #FF4D4D
+
+Use:
+
+Black for the main background.
+Dark gray/black for cards.
+Red for primary actions.
+Red for active navigation.
+Red for important indicators.
+White for main text.
+Light gray for secondary text.
+Dark red for subtle highlighted panels.
+Green only for success states.
+Yellow only for warning states.
+Do not use:
+
+Pastel colours.
+Neon rainbow colours.
+Bright blue.
+Bright purple.
+Light mode as the default.
+White cards.
+Large bright gradients.
+Excessive glow effects.
+Use subtle red gradients only when they improve hierarchy.
+
+================================================== TYPOGRAPHY
+Use Space Grotesk everywhere.
+
+Import:
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');*,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Space Grotesk', sans-serif;
+}All screens must have:
+Dark background.
+Dark cards.
+Readable white text.
+Red interactive accents.
+Visible borders.
+Clear focus states.
+Do not show white cards or light backgrounds anywhere except inside uploaded image previews or explicitly selected content.
+==================================================
+4. TYPOGRAPHY
+Use Space Grotesk everywhere.
+Use Space Grotesk for:
+Logo.
+Headings.
+Body text.
+Buttons.
+Forms.
+Cards.
+Navigation.
+Toasts.
+Dialogs.
+Notifications.
+Profile.
+Graph labels.
+Registration and verification screens.
+Import:All screens must have:
+Dark background.
+Dark cards.
+Readable white text.
+Red interactive accents.
+Visible borders.
+Clear focus states.
+Do not show white cards or light backgrounds anywhere except inside uploaded image previews or explicitly selected content.TYPOGRAPHY
+Use Space Grotesk everywhere.
+Use Space Grotesk for:
+Logo.
+Headings.
+Body text.
+Buttons.
+Forms.
+Cards.
+Navigation.
+Toasts.
+Dialogs.
+Notifications.
+Profile.
+Graph labels.
+Registration and verification screens.@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');*,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Space Grotesk', sans-serif;
+}Use:
+700 for logo and primary headings.
+600 for section headings.
+500 for buttons, labels, navigation, and badges.
+400 for normal body text.
+300 only for secondary text where readable.
+Do not use any other font.
+==================================================
+5. AUTHENTICATION AND REGISTRATION
+Create a proper registration and login experience.
+Registration must require:
+Full name.
+Email.
+Password.
+Confirm password.
+15-digit registration number.
+The registration number must:
+Be exactly 15 characters long.
+Start with the letters “RA”.
+Use uppercase letters.
+Contain “RA” followed by exactly 13 digits.
+Match this pattern:
+/^RAd{13}$/
+Examples of valid registration numbers:
+RA1234567890123
+RA2026001234567
+Examples of invalid registration numbers:
+R1234567890123
+ra1234567890123
+RA12345
+RA12345678901234
+RAABCDEFGHIJKLM
+When the user enters a registration number:
+Automatically convert letters to uppercase.
+Show a live validation message.
+Show a green success state when valid.
+Show a red error state when invalid.
+Display:
+“Registration number must begin with RA and contain exactly 15 characters.”
+Do not accept any registration number that does not match the exact pattern.
+==================================================
+6. EMAIL VALIDATION
+The email address must end exactly with:
+@srmist.edu.in
+Use case-insensitive validation, but normalize the final stored email to lowercase.
+Use this validation pattern:/^[^s@]+@srmist.edu.in$/iValid examples:
+student@srmist.edu.in
+alex.student@srmist.edu.in
+ananya123@srmist.edu.in
+Invalid examples:
+student@gmail.com
+student@srmist.com
+student@srmist.edu.in.fake
+student@srmist.edu
+student @srmist.edu.in
+Show this error message:
+“Please use your SRMIST email ending with @srmist.edu.in.”
+Show this success message:
+“Valid SRMIST email.”
+Do not allow registration until the email is valid.
+Do not claim that the email has been truly verified unless a real email verification backend is connected.
+For demo mode:
+Show a clear “Demo verification” label.
+Explain that production requires real email verification.
+Do not send real emails unless a proper authentication provider is connected.
+==================================================
+7. REGISTRATION UI
+Create a dark registration screen with:
+Black background.
+Red vertical or diagonal accent.
+RExchange logo.
+Space Grotesk typography.
+Red input focus borders.
+Dark gray input fields.
+White labels.
+Gray helper text.
+Red validation errors.
+Green valid states.
+Password visibility toggle.
+Password strength indicator.
+Registration number format hint.
+SRMIST email format hint.
+Terms and safety checkbox.
+Create Account button.
+Display this hint:
+“Use your official SRMIST email and 15-character registration number.”
+Create Account button:
+Red background.
+White text.
+Dark red hover state.
+Clear disabled state.
+After successful demo registration:
+Save the user safely to localStorage without storing the password in plain text if possible.
+Create a session state.
+Show:
+“Account created successfully.”
+Navigate to Browse or Profile.
+==================================================
+8. LOGIN UI
+Create a dark login screen with:
+SRMIST email field.
+Password field.
+Login button.
+Remember demo session checkbox.
+Forgot password placeholder.
+Register link.
+Demo login option clearly labelled.
+Use this demo login:
+Email:
+alex.student@srmist.edu.in
+Registration number:
+RA2026001234567
+Do not display real credentials.
+Use mock/demo data only.
+Show clear errors:
+Invalid email.
+Invalid password.
+Account not found.
+Demo login unavailable.
+==================================================
+9. VERIFICATION SCREEN
+Create a Verification screen after registration.
+Show:
+Registered SRMIST email.
+Masked registration number.
+Verification progress.
+Demo verification status.
+Resend verification button.
+Continue to app button.
+In demo mode, allow the user to click:
+“Complete Demo Verification”
+Then show:
+“Demo verification completed.”
+Clearly display:
+“Production verification requires a real authentication and email-verification service.”
+Do not claim that the account is officially verified in demo mode.
+==================================================
+10. BROWSE SCREEN
+Keep the existing Browse functionality.
+Use the new dark theme.
+Include:
+RExchange logo.
+Welcome message.
+Search bar.
+Filter button.
+Type selector:
+All | Items | Skills
+Category chips.
+Sort selector.
+Result count.
+Listing card grid.
+User interaction tracking.
+Search placeholder:
+“Search books, skills, subjects...”
+Sort options:
+Newest.
+Most Requested.
+Lowest Price.
+Free First.
+Filters:
+All.
+Items.
+Skills.
+Category.
+Condition.
+Exchange mode.
+Campus.
+Delivery mode.
+Free listings only.
+Use:
+Dark black filter backgrounds.
+Red active filters.
+Gray inactive filters.
+Red outline for selected filters.
+White readable text.
+==================================================
+11. LISTING CARDS
+Use dark cards with:
+#161616 card background.
+Thin dark-red border.
+Red accent line.
+Rounded corners.
+Subtle black shadow.
+White title.
+Light gray description.
+Red price or exchange label.
+Red favorite icon when active.
+Red Request button.
+Walnut/maroon styling may be replaced by black/red styling.
+Each card must show:
+Image or dark placeholder.
+Item or Skill badge.
+Title.
+Short description.
+Category or subject.
+Condition for items.
+Indian rupee price.
+Exchange mode.
+Campus/location.
+Owner name.
+Owner avatar.
